@@ -8,6 +8,7 @@ import { NbThemeModule, NbLayoutModule, NbCardModule, NbInputModule, NbButtonMod
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactComponent } from './contact/contact.component';
     NbEvaIconsModule,
     NbCardModule,
     NbInputModule,
-    NbButtonModule
+    NbButtonModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
