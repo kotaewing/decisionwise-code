@@ -1,14 +1,69 @@
-<div class="row">
-    <div class="col-md-6">
-        <nb-card>
-            <nb-card-body class="example-items-rows d-flex flex-column justify-content-center align-items-center">
-                <div>
-                    <label for="firstName" class="me-3">First Name</label>
-                    <input type="text" nbInput id="firstName"  placeholder="Text field">
-                </div>
-            </nb-card-body>
-        </nb-card>
-    </div>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <nb-card class="contact-card">
+      <nb-card-body class="contact-section">
+        <div class="row align-items-center">
+          <div class="col-md-6 d-flex flex-column">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <input
+                type="text"
+                nbInput
+                shape="round"
+                id="firstName"
+                placeholder="First Name"
+                class="mb-3"
+                formControlName="firstName"
+              />
+              <input
+                type="text"
+                nbInput
+                shape="round"
+                id="lastName"
+                placeholder="Last Name"
+                class="mb-3"
+                formControlName="lastName"
+              />
+              <textarea
+                type="text"
+                nbInput
+                shape="round"
+                id="message"
+                placeholder="Message"
+                class="mb-3"
+                formControlName="message"
+              ></textarea>
+              <button
+                nbButton
+                shape="round"
+                routerLink="/contact"
+                routerLinkActive="active"
+                status="warning"
+                class="w-50"
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <img class="w-75" src="../../assets/contact-image.png" alt="" />
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
 </div>
-
-
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <nb-card class="contact-card">
+      <nb-card-header>
+        <h2 class="text-center list-section-header">Contacts</h2>
+      </nb-card-header>
+      <nb-card-body class="contact-section">
+        <ul>
+          <li *ngFor="let contact of contactList"></li>
+        </ul>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
