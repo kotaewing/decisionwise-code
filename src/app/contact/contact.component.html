@@ -3,8 +3,12 @@
     <nb-card class="contact-card">
       <nb-card-body class="contact-section">
         <div class="row align-items-center">
-          <div class="col-md-6 d-flex flex-column">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="col-md-6">
+            <form
+              class="d-flex flex-column"
+              #f="ngForm"
+              (ngSubmit)="onSubmit(f)"
+            >
               <input
                 type="text"
                 nbInput
@@ -12,7 +16,10 @@
                 id="firstName"
                 placeholder="First Name"
                 class="mb-3"
-                formControlName="firstName"
+                ngModel
+                name="firstName"
+                #firstName="ngModel"
+                required
               />
               <input
                 type="text"
@@ -21,8 +28,42 @@
                 id="lastName"
                 placeholder="Last Name"
                 class="mb-3"
-                formControlName="lastName"
+                ngModel
+                name="lastName"
+                #lastName="ngModel"
               />
+              <input
+                type="tel"
+                nbInput
+                shape="round"
+                id="phoneNumber"
+                class="mb-3"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                ngModel
+                #phoneNumber="ngModel"
+              />
+              <nb-radio-group
+                status="warning"
+                class="d-flex"
+                ngModel
+                name="phoneType"
+              >
+                <nb-radio value="Cell">Cell</nb-radio>
+                <nb-radio value="Landline">Landline</nb-radio>
+              </nb-radio-group>
+              <nb-select
+                ngModel
+                name="ageGroup"
+                placeholder="Age Group"
+                class="mb-3"
+              >
+                <nb-option [value]="'10 - 17'">10-17</nb-option>
+                <nb-option [value]="'18 - 24'">18-24</nb-option>
+                <nb-option [value]="'25 - 40'">25-40</nb-option>
+                <nb-option [value]="'41 - 55'">41-55</nb-option>
+                <nb-option [value]="'55+'">55+</nb-option>
+              </nb-select>
               <textarea
                 type="text"
                 nbInput
@@ -30,7 +71,9 @@
                 id="message"
                 placeholder="Message"
                 class="mb-3"
-                formControlName="message"
+                ngModel
+                name="message"
+                #message="ngModel"
               ></textarea>
               <button
                 nbButton
@@ -61,16 +104,8 @@
       </nb-card-header>
       <nb-card-body class="contact-section">
         <ul>
-          <!-- <li *ngFor="let contact of contactList">
-              Hello WOrld
-          </li> -->
-          <li>
-              <nb-card>
-                  <nb-card-body>
-                      <p>Name: Dakota Ewing</p>
-                      Contact Number: 8018721277
-                  </nb-card-body>
-              </nb-card>
+          <li *ngFor="let contact of contactList">
+            <app-contact-card [model]="contact"></app-contact-card>
           </li>
         </ul>
       </nb-card-body>

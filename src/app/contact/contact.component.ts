@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
+import { last, Observable } from 'rxjs';
 
 @Component({
   templateUrl: './contact.component.html',
@@ -8,16 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class ContactComponent implements OnInit {
   contactList = [] as any;
-  contactForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    message: new FormControl(''),
-  })
+  firstName = '';
+  lastName = '';
+  phoneNumber = '';
+  message = '';
 
   constructor() { }
   
-  onSubmit() {
-    alert(this.contactForm.value)
+  onSubmit(f: NgForm) {
+    this.contactList.push(f.value)
+    f.resetForm();
   }
 
   ngOnInit(): void {

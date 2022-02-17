@@ -17,7 +17,17 @@ $nb-themes: nb-register-theme(
     color-primary-900: #212529,
     layout-background-color: #212529,
     header-background-color: #000,
-    header-shadow: #111
+    header-shadow: #111,
+    radio-warning-text-color: #000,
+    select-outline-basic-background-color: #fff,
+    select-outline-basic-hover-background-color: #fff,
+    select-outline-basic-focus-background-color: #fff,
+    select-outline-basic-text-color: #000,
+    option-list-background-color: #fff,
+    option-background-color: #fff,
+    option-text-color: #000,
+    option-hover-text-color: #000,
+    option-selected-text-color: #000
   ),
   dark,
   dark
