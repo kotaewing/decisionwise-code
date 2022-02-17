@@ -1,6 +1,11 @@
-.contact-card {
+.contact-card, nb-card {
   border-radius: 1rem;
   background-color: #eee;
+  color: black;
+}
+
+p {
+  color: black;
 }
 
 [nbInput].status-basic {
@@ -14,4 +19,8 @@
 
 li {
   color: black;
+}
+
+ul {
+  list-style: none;
 }

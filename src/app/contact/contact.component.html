@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <nb-card class="contact-card">
       <nb-card-body class="contact-section">
         <div class="row align-items-center">
@@ -54,14 +54,24 @@
   </div>
 </div>
 <div class="row justify-content-center">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <nb-card class="contact-card">
       <nb-card-header>
         <h2 class="text-center list-section-header">Contacts</h2>
       </nb-card-header>
       <nb-card-body class="contact-section">
         <ul>
-          <li *ngFor="let contact of contactList"></li>
+          <!-- <li *ngFor="let contact of contactList">
+              Hello WOrld
+          </li> -->
+          <li>
+              <nb-card>
+                  <nb-card-body>
+                      <p>Name: Dakota Ewing</p>
+                      Contact Number: 8018721277
+                  </nb-card-body>
+              </nb-card>
+          </li>
         </ul>
       </nb-card-body>
     </nb-card>
